@@ -8,6 +8,7 @@ import (
 	"net"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
 
 	pb "be/internal/proto"
 )
@@ -38,7 +39,11 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 
-	s := grpc.NewServer()
+	creds, err := credentials.NewServerTLSFromFile("/etc/ssl/certs/grpc.crt", "/etc/ssl/private/grpc.key")
+	if err != nil {
+		log.Fatalf("failed to new tls server: %v", err)
+	}
+	s := grpc.NewServer(grpc.Creds(creds))
 	pb.RegisterGreeterServer(s, &server{})
 	log.Printf("server listening at %v", lis.Addr())
 	if err := s.Serve(lis); err != nil {
