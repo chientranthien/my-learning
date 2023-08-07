@@ -32,3 +32,23 @@
   - QPS
   - Scalability: Number of messages/second per server core
 - Hardward: most instances has 8 core. For C++ and Java they additional suport QPS testing on 32 cores system
+
+### Cancellation
+
+- gRPC support cancel function that client can send a cancel request to server. So server can propogate the cancel to its sub-call
+
+### Compression
+
+- gRPC can support encoding and client can specify it via the endocing header
+
+### Custom metric
+
+- gRPC record some basic metric. But you can add more of your own custom metrics
+
+### Custom load balancer
+
+- gRPC has it own client load balancer. But you can custom your load balancer
+
+### Custom Name resolver
+
+- Beside using the default DNS machanism. You can add your own custom Name resolver. The reason you want to do this because DNS only return IP. But if you need to watch for the new change you should has a custom name resolver to do it
