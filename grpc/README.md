@@ -52,3 +52,9 @@
 ### Custom Name resolver
 
 - Beside using the default DNS machanism. You can add your own custom Name resolver. The reason you want to do this because DNS only return IP. But if you need to watch for the new change you should has a custom name resolver to do it
+
+### Load balancing
+
+- Client side: load balancing, clients know the IPs address and make the call to servers directly. We can use this solution if we want to reduce latency for trusted clients
+- Server side load balancing: we can use a L3/L4/L7 load balancer. So it can reduce the complicated on client side, but it will increase latency
+- Lock-aside load balancing: client subcribe to the load balancer to know about the server IPs and if there is any updates. But clients will send the requests directly to servers
