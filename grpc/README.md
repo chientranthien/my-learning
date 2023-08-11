@@ -57,4 +57,8 @@
 
 - Client side: load balancing, clients know the IPs address and make the call to servers directly. We can use this solution if we want to reduce latency for trusted clients
 - Server side load balancing: we can use a L3/L4/L7 load balancer. So it can reduce the complicated on client side, but it will increase latency
-- Lock-aside load balancing: client subcribe to the load balancer to know about the server IPs and if there is any updates. But clients will send the requests directly to servers
+- Look-aside load balancing: client subcribe to the load balancer to know about the server IPs and if there is any updates. But clients will send the requests directly to servers
+
+### gRPC Client load balancing
+
+- you can archived that by create a DNS to load balance or can create a custom service resolver implmenetion in code
