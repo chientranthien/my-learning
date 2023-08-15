@@ -62,3 +62,11 @@
 ### gRPC Client load balancing
 
 - you can archived that by create a DNS to load balance or can create a custom service resolver implmenetion in code
+
+### gRPC Server load balancing with nginx
+
+- It's very easy to config nginx to load balance for grpc. You can config the upstream (grpc servers addresses) and the server to listen to a port. And that's all it need to config nginx with grpc
+
+### Authentication
+
+- Today, I've learnt that grpc can also support authentication via Authorization header. And Authentication must be used together with TLS/SSL
