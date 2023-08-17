@@ -70,3 +70,7 @@
 ### Authentication
 
 - Today, I've learnt that grpc can also support authentication via Authorization header. And Authentication must be used together with TLS/SSL
+
+### Authorization
+
+- gRPC can support authorization, you can specify authz policy for each method by method name (using)
