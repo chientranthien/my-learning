@@ -74,3 +74,11 @@
 ### Authorization
 
 - gRPC can support authorization, you can specify authz policy for each method by method name (using)
+
+### Compression
+
+- gRPC can support compression like GZIP
+
+### Cancellation
+
+- you can cancel the request, and propogate it to the server
