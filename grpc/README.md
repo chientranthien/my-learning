@@ -1,5 +1,9 @@
 # gRPC learning
 
+## Following up
+
+- How to generate tls cert files
+
 ## Quick start
 
 - link: https://grpc.io/docs/languages/go/quickstart/
