@@ -86,3 +86,7 @@
 ### Cancellation
 
 - you can cancel the request, and propogate it to the server
+
+### gRPC
+
+- you can create a health check, and gRPC will not call unhealthy instances
