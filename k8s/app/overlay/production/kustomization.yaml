@@ -1,0 +1,7 @@
+namePrefix: prod-
+commonLabels:
+  tier: prod
+bases:
+- ../../base
+patchesStrategicMerge:
+- replica_count.yaml

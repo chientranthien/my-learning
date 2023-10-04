@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: kubeacademy
+    tier: prod
+  name: prod-building-apps-svc
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: kubeacademy
+    tier: prod
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: kubeacademy
+    tier: prod
+  name: prod-building-apps-deploy
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: kubeacademy
+      tier: prod
+  template:
+    metadata:
+      labels:
+        app: kubeacademy
+        tier: prod
+    spec:
+      containers:
+      - image: lander2k2/building-apps:0.1
+        imagePullPolicy: Always
+        name: building-apps-containers
